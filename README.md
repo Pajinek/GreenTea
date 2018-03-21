@@ -12,7 +12,7 @@ Easy way to run Green Tea is using docker https://registry.hub.docker.com/u/paji
 
 ```
 docker pull pajinek/greentea
-docker run -i -t -p 80:8000 pajinek/greentea 
+docker run -i -t -p 80:8000 pajinek/greentea
 ```
 
 If you test project with gained systems from Beaker, then you must fill Beaker's authentication values.
@@ -23,7 +23,7 @@ docker run -i -t -p 80:8000 \
   -e BEAKER_SERVER=<beaker_server> \
   -e BEAKER_USER=<beaker_user> \
   -e BEAKER_PASS=<beaker_pass> \
-pajinek/greentea 
+pajinek/greentea
 ```
 
 or
@@ -36,8 +36,8 @@ sudo docker run -i -t -p 80:8000 \
   -e BEAKER_SERVER=<beaker_server> \
   -e BEAKER_USER=<beaker_user> \
   -e BEAKER_PASS=<beaker_pass> \
-greentea 
-``` 
+greentea
+```
 
 Service runs on default port 80 (link on your system is http://localhost/)
 
@@ -68,4 +68,10 @@ Easer way is deploy project by docker by following script:
 
 ```
 ansible-playbook -i config/hosts.ini docker.yaml
+```
+
+## Code analysis
+
+```
+docker run -v=$(pwd):/app -v=/tmp/coala:/cache --workdir=/app coala/base coala --ci
 ```
