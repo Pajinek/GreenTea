@@ -14,7 +14,6 @@ RUN curl https://beaker-project.org/yum/beaker-client-CentOS.repo -o /etc/yum.re
 
 ADD requirement/* /data/greentea/requirement/
 RUN source $HOME/env/bin/activate \
-    && pip install -r $HOME/requirement/requirement.txt \
     && pip install -r $HOME/requirement/requirement-postgresql.txt \
     && yum remove -y python-devel libpq-devel openssl-devel gcc \
     && yum clean all
